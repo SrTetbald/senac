@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+    var s_n;
+    
+    alert("Vou te explicar como funciona potenciação com os alertas");
+    s_n = prompt("Quer aprender? (s/n)");
+    
+    if (s_n == "s") {
+        let a;
+        let e;
+        
+        a = parseInt(prompt("Digite um valor: "));
+        e = parseInt(prompt("Digite agora o expoente"));
+
+        let resultado = Math.pow(a, e);
+
+        
+        let repeticao = "";
+        for (let i = 1; i <= e; i++) {
+            repeticao += a;
+            if (i < e) {
+                repeticao += " * "; 
+            }
+        }
+
+        
+        alert("O resultado de " + a + " elevado a " + e + " é " + resultado + 
+              "\n\nPorque a conta seria: " + repeticao + "." +
+              "\nDito isso, o resultado é: " + resultado);
+
+    } else {
+        alert("Tudo bem, tentamos outro dia..");
+    }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
