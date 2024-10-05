@@ -11,6 +11,11 @@
     alert("Vou te explicar como funciona potenciação com os alertas");
     s_n = prompt("Quer aprender? (s/n)");
     
+    while (s_n != "s" && s_n != "n"){
+        alert("Você selecinou um tipo de entrada inválida")
+        s_n = prompt("Tente de novo: (s/n)");
+    }
+    
     if (s_n == "s") {
         let a;
         let e;
