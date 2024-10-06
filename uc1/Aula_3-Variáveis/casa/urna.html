@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var candidato_1 = 0;
+        var candidato_2 = 0;
+        var candidato_3 = 0;
+        var candidato_4 = 0;
+        var voto;
+
+        for (let i = 1; i <= 5; i++){
+            voto = parseInt(prompt("Qual seu voto?" + 
+                "\n\nCandidato 1 (1)" +
+                "\n\nCandidato 2 (2)" +
+                "\n\nCandidato 3 (3)" +
+                "\n\nCandidato 4 (4)"));
+
+
+            if((i % 2 == 0) && (voto !== 2)){
+                candidato_2 += 1            
+            }else if(voto == 1){
+                candidato_1 += 1
+            }else if(voto == 2){
+                candidato_2 += 1
+            }else if(voto == 3){
+                candidato_3 += 1
+            }else if(voto == 4){
+                candidato_4 += 1
+            }
+            
+            console.clear()
+            console.log(candidato_1);
+            console.log(candidato_2);
+            console.log(candidato_3);
+            console.log(candidato_4);
+
+        };
+
+        alert("Candidato 1 recebeu: " + candidato_1 +  " votos" +
+        "\n\nCandidato 2 recebeu: " + candidato_2 + " votos" +
+        "\n\nCandidato 3 recebeu: " + candidato_3 + " votos" +
+        "\n\nCandidato 4 recebeu: " + candidato_4 + " votos");
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
