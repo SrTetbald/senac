@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*3. Construir um programa onde um vendedor irá digitar quanto ele vendeu em um mês na loja. Caso esse total de vendas seja
+maior ou igual a R$ 100.000,00, o programa irá calcular uma comissão de 4% sobre suas vendas, mas caso a venda seja menor,
+o programa calculará apenas 2%.*/
+        var venda, comissao;
+
+        venda = parseFloat(prompt("Quanto vendeu esse mês?: "));
+
+        if (venda >= 100000){
+            comissao = venda * 0.04
+            alert("Sua comissão é: R$" + comissao);
+        }else{
+            comissao = venda * 0.02
+            alert("Sua comissão é: R$" + comissao);
+        };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

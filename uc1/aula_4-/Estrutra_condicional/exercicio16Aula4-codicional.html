@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*1. A escola Lemos Segundo resolveu criar um programa para ajudar os professores nos conceitos dos estudantes. O(a)
+professor(a) irá digitar a nota tirada pelo aluno. Caso seja menor do que 0 ou maior do que 10, o programa irá escrever
+“Nota Inválida”; se for maior ou igual a 0 e menor do que 4, o programa irá escrever, “aluno reprovado”. Se a nota for maior
+ou igual a 4 e menor do que 7, o programa irá escrever “Aluno em Recuperação” e, caso seja maior ou igual a 7 e menor ou
+igual a 10, escreverá “Aluno Aprovado”.*/
+        
+        var nota
+
+        nota = parseFloat(prompt("Digite a nota do aluno: "));
+        if (nota >= 0 && nota < 4 ){
+            document.write("Aluno (a),reprovado");
+        }else if (nota >= 4 && nota < 7){
+            document.write("Aluno (a), em recuperação");
+        }else if (nota >= 7 && nota <= 10){
+            document.write("Aluno (a), aprovado");
+        }else{
+            document.write("Nota inválida")
+        };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

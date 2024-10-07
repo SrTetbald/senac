@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*12. A escola Lemos Segundo gostou do sistema que você desenvolveu e, com isso, pediu um “upgrade”. Aproveitando o código
+      do exercício anterior, eles solicitaram que, no caso de o estudante ficar em recuperação, o programa deverá solicitar a
+      digitação de mais uma nota. Se essa nota for menor que 5, o programa escreverá “Reprovado na Recuperação” e, caso
+      contrário, “Aprovado na Recuperação”.
+      Ao concluir as atividades, o docente realizará a correção, principalmente dando ênfase nas dificuldades dos alunos. Após a
+      explicação de uma linha de código, o instrutor deverá perguntar aos alunos qual seria o próximo passo para continuidade da
+      tarefa.
+      */
+
+      var nota, nota_recuperação;
+
+      nota = parseFloat(prompt("Digite a nota do aluno: "));
+      if (nota >= 0 && nota < 4) {
+        document.write("Aluno (a),reprovado");
+      } else if (nota >= 4 && nota < 7) {
+        alert("Você está de recuperação");
+        nota_recuperação = parseFloat(prompt("Qual sua nota da recuperação? "));
+        if (nota_recuperação >= 0 && nota_recuperação < 5) {
+          document.write("Reprovado na recuperação");
+        } else if (nota_recuperação >= 5 && nota_recuperação <= 10) {
+          document.write("aprovado na recuperação");
+        } else {
+          alert("Nota inválida");
+        }
+      } else if (nota >= 7 && nota <= 10) {
+        document.write("Aluno (a), aprovado");
+      } else {
+        document.write("Nota inválida");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

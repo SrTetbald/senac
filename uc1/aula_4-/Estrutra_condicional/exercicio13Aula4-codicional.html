@@ -5,20 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        /*1. Construir uma página para uma empresa de serviços. O operador irá digitar o salário de um cliente. Se o salário for maior
+que R$ 3.000,00, o programa irá escrever na tela “Oferecer Plano Alfa” e, caso seja menor, o programa escreverá “Oferecer*/
+        var salario
 
-        var peso, altura, imc;
+        salario = parseFloat(prompt("Digite o salário: "));
 
-        peso = parseFloat(prompt("Qual seu peso? "));
-        altura = parseFloat(prompt("Qual sua altura? "));
-
-        imc = (peso/altura*altura)
-
-        if (imc < 18){
-            alert("ABAIXO DO PESO");
-        }else if (imc >= 18 && imc <= 24.9){
-            alert("PESO NORMAL")
-        }else if(imc >= 25){
-            alert("ACIMA DO PESO")
+        if (salario >= 3000){
+            alert("Oferecer plano Alfa");
+        }else{
+            alert("Oferecer plano beta");
         };
     </script>
 </head>
