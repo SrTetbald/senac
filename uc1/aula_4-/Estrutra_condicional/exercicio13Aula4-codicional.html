@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var peso, altura, imc;
+
+        peso = parseFloat(prompt("Qual seu peso? "));
+        altura = parseFloat(prompt("Qual sua altura? "));
+
+        imc = (peso/altura*altura)
+
+        if (imc < 18){
+            alert("ABAIXO DO PESO");
+        }else if (imc >= 18 && imc <= 24.9){
+            alert("PESO NORMAL")
+        }else if(imc >= 25){
+            alert("ACIMA DO PESO")
+        };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

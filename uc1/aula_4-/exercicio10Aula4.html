@@ -5,24 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="stylesheet" href="style.css">
     <script>
-        var valor, resultado, porcentagem_transporte, porcentagem_inss, soma_porcentagens;
+        var salario, resultado, porcentagem_transporte, porcentagem_inss, soma_porcentagens;
         
-        valor = parseFloat(prompt("Digite seu salário: "));
-        porcentagem_transporte = valor * 0.06;
-        porcentagem_inss = valor * 0.08;
+        salario = parseFloat(prompt("Digite seu salário: "));
+        porcentagem_transporte = salario * 0.06;
+        porcentagem_inss = salario * 0.08;
         desconto = porcentagem_inss + porcentagem_transporte;
         soma_porcentagens = porcentagem_inss + porcentagem_transporte;
-        resultado = valor - soma_porcentagens;
-        alert("Seu salário irá sofrer descontos de 6% de transporte( R$" + porcentagem_transporte + "), e 8% INSS ( R$" + porcentagem_inss + ")" +
-        "\n\nSalário bruto : R$" + valor + "\n\nSalário líquido: R$" + resultado + "\n\n Total descontado: R$" + desconto);
+        resultado = salario - soma_porcentagens;
+        
+        alert("Seu salário irá sofrer descontos de 6% de transporte ( R$" + porcentagem_transporte + "), e 8% INSS ( R$" + porcentagem_inss + ")" +
+        "\n\nSalário bruto : R$" + salario + "\n\nSalário líquido: R$" + resultado + "\n\n Total descontado: R$" + desconto);
                 
     </script>
 </head>
 
 <body>
+    <header>
+        
+        <nav>
 
+        </nav>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+
+    </footer>
 </body>
 
 </html>
