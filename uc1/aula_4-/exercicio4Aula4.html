@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var valor, porcentagem_usuario, porcentagem;
+        valor = parseFloat(prompt("Digite um valor "));
+        porcentagem_usuario = parseFloat(prompt("Qual porcentagem você deseja? "));
+        
+        porcentagem = (porcentagem_usuario * valor)/100;
+        resultado = valor + porcentagem;
+        alert(porcentagem_usuario + "% de R$" + valor + " é " + porcentagem.toFixed(2) +
+              "\n\ncom o imposto sua compra fica: R$" + resultado);
+                
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

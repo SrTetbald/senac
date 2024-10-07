@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var valor, resultado, porcentagem_transporte, porcentagem_inss, soma_porcentagens;
+        
+        valor = parseFloat(prompt("Digite seu salário: "));
+        porcentagem_transporte = valor * 0.06;
+        porcentagem_inss = valor * 0.08;
+        desconto = porcentagem_inss + porcentagem_transporte;
+        soma_porcentagens = porcentagem_inss + porcentagem_transporte;
+        resultado = valor - soma_porcentagens;
+        alert("Seu salário irá sofrer descontos de 6% de transporte( R$" + porcentagem_transporte + "), e 8% INSS ( R$" + porcentagem_inss + ")" +
+        "\n\nSalário bruto : R$" + valor + "\n\nSalário líquido: R$" + resultado + "\n\n Total descontado: R$" + desconto);
+                
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
