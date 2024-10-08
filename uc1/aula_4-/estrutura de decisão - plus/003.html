@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            3. As	maçãs	 custam	 R$	 0,30	 cada	 se	 forem	 compradas
+            menos	 do	 que	 uma  dúzia,	 e	 R$	 0,25	 se	 forem
+            compradas	 pelo	 menos	 doze.	 Escreva	 um	
+            programa	 que	 leia	 o	 número	 de	 maçãs	 compradas,	
+            calcule	 e	 escreva	 o	valor	total	da	compra.
+        */
+        var preco_maca, preco_maca_desconto, quantidade, preco;
+        preco_maca = 0.3;
+        preco_maca_desconto = 0.25
+
+        quantidade = parseFloat(prompt("Qual a quantidade de maçãs? "));
+        if(quantidade >= 12){
+            preco = preco_maca_desconto * quantidade;
+            alert("Sua compra deu R$" + preco.toFixed(2));
+        }else{
+            preco = preco_maca * quantidade;
+            alert("Sua compra deu R$" + preco.toFixed(2))
+        };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
