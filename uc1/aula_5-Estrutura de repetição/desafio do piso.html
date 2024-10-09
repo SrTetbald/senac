@@ -69,20 +69,20 @@ pergunte se deseja fazer outra consulta e então refaça todo
                     break;
                 case 4:
                     cartaoParcelado = valorCompra + (valorCompra * 0.02);
-                    alert("Sua compra sai no valor de: R$"+cartaoParcelado)
-                    totalParcelas = parseFloat(prompt("Qual a quantidade de parcelas? "+
-                    "\n\n1x "+cartaoParcelado/1+
-                    "\n2x "+cartaoParcelado/2+
-                    "\n3x "+cartaoParcelado/3+
-                    "\n4x "+cartaoParcelado/4+
-                    "\n5x "+cartaoParcelado/5+
-                    "\n6x "+cartaoParcelado/6+
-                    "\n7x "+cartaoParcelado/7+
-                    "\n8x "+cartaoParcelado/8+
-                    "\n9x "+cartaoParcelado/9+
-                    "\n10x "+cartaoParcelado/10+
-                    "\n11x "+cartaoParcelado/11+
-                    "\n12x "+cartaoParcelado/12));
+                    totalParcelas = parseFloat(prompt("Sua compra sai no valor de: R$"+cartaoParcelado +
+                    "\n\nQual a quantidade de parcelas? "+
+                    "\n\n1x "+(cartaoParcelado/1).toFixed(2)+
+                    "\n2x "+(cartaoParcelado/2).toFixed(2)+
+                    "\n3x "+(cartaoParcelado/3).toFixed(2)+
+                    "\n4x "+(cartaoParcelado/4).toFixed(2)+
+                    "\n5x "+(cartaoParcelado/5).toFixed(2)+
+                    "\n6x "+(cartaoParcelado/6).toFixed(2)+
+                    "\n7x "+(cartaoParcelado/7).toFixed(2)+
+                    "\n8x "+(cartaoParcelado/8).toFixed(2)+
+                    "\n9x "+(cartaoParcelado/9).toFixed(2)+
+                    "\n10x "+(cartaoParcelado/10).toFixed(2)+
+                    "\n11x "+(cartaoParcelado/11).toFixed(2)+
+                    "\n12x "+(cartaoParcelado/12).toFixed(2)));
                     break;
                 default:
                     alert("Forma de pagamento inválida");
@@ -92,6 +92,10 @@ pergunte se deseja fazer outra consulta e então refaça todo
             if (s_n == true) {
                 metrosLargura = parseFloat(prompt("Qual o comprimento? "));
                 metrosComprimento = parseFloat(prompt("Qual a largura? "));
+                metrosQuadrados = metrosComprimento*metrosLargura
+                valorMetro = 20
+                valorCompra = valorMetro*metrosQuadrados
+
                 alert("Você vai precisar comprar "+metrosQuadrados.toFixed(2)+"m², o valor do metro custa R$"+valorMetro+
                 "\n\nSua compra está dando o valor de: R$"+valorCompra.toFixed(2))
             }           
