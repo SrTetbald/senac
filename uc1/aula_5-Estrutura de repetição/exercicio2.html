@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            2. Agora, o estudante construirá, utilizando o comando Switch), um programa para o Senac. O instrutor irá digitar um desses três conceitos (A,
+PA ou NA). Caso ele escolha A, escreverá na tela “Atendido”; caso ele escolha PA, o programa escreverá na tela “Parcialmente Atendido”; ou
+caso ele digite NA, o programa colocará na tela “Não Atendido”.
+        */
+       var conceito;
+
+       conceito = prompt("Qual o conceito? ");
+       switch(conceito){
+            case "A":
+            case "a":
+                alert("Atendido");
+                break;
+            case "PA":
+            case "pa":
+                alert("Parcialmente atendido");
+                break;
+            case "NA":
+            case "na":
+                alert("Não atendido");
+                break;
+            default:
+                alert("Conceito não registrado");
+                break;
+       };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

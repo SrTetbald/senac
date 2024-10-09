@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+3. Construir um programa no qual o usuário digitará um número e o programa fará a contagem regressiva deste número,
+até o número zero.
+        */
+        var valor;
+
+valor = parseInt(prompt("Qual o número? "));
+
+while(valor !== -1){
+     document.write(valor+"<br>");
+     valor -= 1;
+     if(valor < 0){
+         valor = - 1;
+     };
+};
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

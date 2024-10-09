@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var media, frequencia;
+
+        media = parseFloat(prompt("Media: "));
+        frequencia = parseFloat(prompt("frequencia: "));
+
+        if (media >= 7 && frequencia >= 75){
+            document.write("aprovado");
+        }else{
+           document.write("reprovado:"+"<br>");
+            if(media < 7 && frequencia > 75){
+                document.write("Reprovado por nota.")
+            }else if(media > 7 && frequencia < 75){
+                document.write("Reprovado por frequência.")
+            }else{
+                document.write("Reprovado por nota e freqência")
+            };
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
