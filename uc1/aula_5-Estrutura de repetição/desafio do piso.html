@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,79 +35,106 @@ o valor de cada parcela, caso se aplique
 pergunte se deseja fazer outra consulta e então refaça todo 
         */
 
-        var metrosLargura, metrosComprimento, metrosQuadrados, valorMetro, valorCompra, s_n, formaPagamento, debito, dinheiro, cartaoVista, cartaoParcelado;
+        var metrosLargura, metrosComprimento, metrosQuadrados, valorMetro, valorCompra, resposta, formaPagamento, debito, dinheiro, cartaoVista, cartaoParcelado;
         var parcela, totalParcelas;
 
 
         metrosLargura = parseFloat(prompt("Qual o comprimento? "));
         metrosComprimento = parseFloat(prompt("Qual a largura? "));
-        metrosQuadrados = metrosComprimento*metrosLargura
-        valorMetro = 20
-        valorCompra = valorMetro*metrosQuadrados
+        metrosQuadrados = Math.ceil(metrosComprimento * metrosLargura);
+        
+        valorCompra = valorMetro * metrosQuadrados
 
 
-        alert("Você vai precisar comprar "+metrosQuadrados.toFixed(2)+"m², o valor do metro custa R$"+valorMetro+
-              "\n\nSua compra está dando o valor de: R$"+valorCompra.toFixed(2))
-        s_n = confirm("Deseja proseguir?");
-        while (s_n == true){
-        formaPagamento = parseInt(prompt("Qual seria a forma de pagamento? "+
-                                "\n\n1. A vista em dinheiro 10% de desconto"+
-                                "\n2. Débito 5% de desconto"+
-                                "\n3. Credito a vista 1% de acrescimo"+
-                                "\n4. Crédito parcelado 2% de acrescimo"));
-        switch (formaPagamento) {
+
+        alert("Você vai precisar comprar " + metrosQuadrados + "m², o valor do metro custa R$" + valorMetro.toFixed(2) +
+            "\n\nSua compra está dando o valor de: R$" + valorCompra.toFixed(2))
+        valorMetro =parseInt(prompt("Pisos: "+
+              "1. R$120.00"+
+              "2. R$10.00"+
+              "3. R$130.00"))
+        switch (valorMetro) {
+            case 1:
+                valorMetro = 120.00;
+                break;
+            case 2:
+                valorMetro = 10.00;
+                break;
+            case 3:
+                valorMetro = 130.00;
+                break;
+            default:
+                alert("Opção inválida, tente novamente");
+                return;
+        }
+
+        resposta = confirm("Deseja proseguir?");
+        while (resposta == true) {
+            formaPagamento = parseInt(prompt("Qual seria a forma de pagamento? " +
+                "\n\n1. A vista em dinheiro 10% de desconto" +
+                "\n2. Débito 5% de desconto" +
+                "\n3. Credito a vista 1% de acrescimo" +
+                "\n4. Crédito parcelado 2% de acrescimo"));
+            switch (formaPagamento) {
                 case 1:
                     dinheiro = valorCompra - (valorCompra * 0.10);
-                    alert("Sua compra sai no valor de: R$"+dinheiro)
+                    alert("valor de: R$" + dinheiro.toFixed(2))
                     break;
                 case 2:
                     debito = valorCompra - (valorCompra * 0.05);
-                    alert("Sua compra sai no valor de: R$"+debito)
+                    alert("valor de: R$" + debito.toFixed(2))
                     break;
                 case 3:
                     cartaoVista = valorCompra + (valorCompra * 0.01);
-                    alert("Sua compra sai no valor de: R$"+cartaoVista)
+                    alert("valor de: R$" + cartaoVista.toFixed(2))
                     break;
                 case 4:
                     cartaoParcelado = valorCompra + (valorCompra * 0.02);
-                    totalParcelas = parseFloat(prompt("Sua compra sai no valor de: R$"+cartaoParcelado +
-                    "\n\nQual a quantidade de parcelas? "+
-                    "\n\n1x "+(cartaoParcelado/1).toFixed(2)+
-                    "\n2x "+(cartaoParcelado/2).toFixed(2)+
-                    "\n3x "+(cartaoParcelado/3).toFixed(2)+
-                    "\n4x "+(cartaoParcelado/4).toFixed(2)+
-                    "\n5x "+(cartaoParcelado/5).toFixed(2)+
-                    "\n6x "+(cartaoParcelado/6).toFixed(2)+
-                    "\n7x "+(cartaoParcelado/7).toFixed(2)+
-                    "\n8x "+(cartaoParcelado/8).toFixed(2)+
-                    "\n9x "+(cartaoParcelado/9).toFixed(2)+
-                    "\n10x "+(cartaoParcelado/10).toFixed(2)+
-                    "\n11x "+(cartaoParcelado/11).toFixed(2)+
-                    "\n12x "+(cartaoParcelado/12).toFixed(2)));
+                    totalParcelas = parseFloat(prompt("Sua compra sai no valor de: R$" + cartaoParcelado.toFixed(2) +
+                        "\n\nQual a quantidade de parcelas? " +
+                        "\n\n1x " + (cartaoParcelado / 1).toFixed(2) +
+                        "\n2x " + (cartaoParcelado / 2).toFixed(2) +
+                        "\n3x " + (cartaoParcelado / 3).toFixed(2) +
+                        "\n4x " + (cartaoParcelado / 4).toFixed(2) +
+                        "\n5x " + (cartaoParcelado / 5).toFixed(2) +
+                        "\n6x " + (cartaoParcelado / 6).toFixed(2) +
+                        "\n7x " + (cartaoParcelado / 7).toFixed(2) +
+                        "\n8x " + (cartaoParcelado / 8).toFixed(2) +
+                        "\n9x " + (cartaoParcelado / 9).toFixed(2) +
+                        "\n10x " + (cartaoParcelado / 10).toFixed(2) +
+                        "\n11x " + (cartaoParcelado / 11).toFixed(2) +
+                        "\n12x " + (cartaoParcelado / 12).toFixed(2)));
                     break;
                 default:
                     alert("Forma de pagamento inválida");
+                    formaPagamento = "Forma de pagamento inválida"
                     break;
-            };  
-            s_n = confirm("Deseja fazer outra consulta?");   
-            if (s_n == true) {
+            };
+
+
+
+            
+            resposta = confirm("Deseja fazer outra consulta?");
+            if (resposta == true) {
                 metrosLargura = parseFloat(prompt("Qual o comprimento? "));
                 metrosComprimento = parseFloat(prompt("Qual a largura? "));
-                metrosQuadrados = metrosComprimento*metrosLargura
+                metrosQuadrados = Math.ceil(metrosComprimento * metrosLargura);
                 valorMetro = 20
-                valorCompra = valorMetro*metrosQuadrados
+                valorCompra = valorMetro * metrosQuadrados
 
-                alert("Você vai precisar comprar "+metrosQuadrados.toFixed(2)+"m², o valor do metro custa R$"+valorMetro+
-                "\n\nSua compra está dando o valor de: R$"+valorCompra.toFixed(2))
-            }           
+                alert("Você vai precisar comprar " + metrosQuadrados.toFixed(2) + "m², o valor do metro custa R$" + valorMetro +
+                    "\n\nSua compra está dando o valor de: R$" + valorCompra.toFixed(2))
+            }
         };
         alert("Até mais.");
 
 
-       
+
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
