@@ -1,19 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
         var operador, numero;
-       numero = parseInt(prompt("Qual o valor? "));
-       operador = parseInt(prompt("Qual a operação?"+"\n1 - Soma\n2 - Subtração\n3 - Multiplicação\n4 - Divisão"));
-       switch(operador){
+        alert("Vamos fazer a tabuada de um valor.")
+        numero = parseInt(prompt("Diga o valor? "));
+        operador = parseInt(prompt("Qual a operação?"+"\n1 - Soma\n2 - Subtração\n3 - Multiplicação\n4 - Divisão"));
+        switch(operador){
         case 1:
             for(var i = 0 ; i <= 10 ; i++){
                 document.write(numero+" + "+ i +" = " + (numero + i) + "<br>")
             }
             break;
+        case 2:
+            for(var i = 0 ; i <= 10 ; i++){
+                document.write(numero+" - "+ i +" = " + (numero - i) + "<br>")
+            }
+            break;
+        case 3:
+            for(var i = 0 ; i <= 10 ; i++){
+                document.write(numero+" x "+ i +" = " + (numero * i) + "<br>")
+            }
+            break;
+        case 4:
+            for(var i = 1; i <= 10 ; i++){
+                document.write(numero+" ÷ "+ i +" = " + (numero / i) + "<br>")
+            }
+            break;
+        default:
+            alert("Opção inválida")
        }
     </script>
 </head>
