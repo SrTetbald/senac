@@ -75,6 +75,7 @@
                         largura = parseFloat(prompt("Precisamos saber qual a largura do ambiente. "));
                         comprimento = parseFloat(prompt("Agora precisamos saber qual o comprimento do ambiente. "));
                         metrosQuadrados = Math.ceil(largura*comprimento);
+                        alert("Você precisará de "+metrosQuadrados+"m² para atender o seu ambiente.");
                         for (var i = 1; i <= 3 ; i++){
                             switch(i){
                                 case 1:
@@ -106,30 +107,230 @@
 
         alert("Olá, seja bem-vindo! Para melhor atendê-lo, por favor, vamos primeiro fazer seu orçamento")
         orcamento();
-        alert("Comprando "+metrosQuadrados.toFixed(2)+"m²: "+"\n- Piso liso R$"+compraLiso.toFixed(2)+"\n- Piso Taco R$"+compraTaco.toFixed(2)+"\n- Piso Antiderrapande R$"+compraAntiderrapante.toFixed(2));
-        resposta = confirm("Deseja proceguir com a compra? ");
+        alert("Comprando "+metrosQuadrados.toFixed(2)+"m²: "+"\n- Piso liso R$"+compraLiso.toFixed(2)+"\n- Piso Taco R$"+compraTaco.toFixed(2)+"\n- Piso Antiderrapante R$"+compraAntiderrapante.toFixed(2));
+        resposta = confirm("Deseja prosseguir com a compra? ");
         if (resposta == true) {
             saidaLoop = true;
             while (saidaLoop == true){
-                let formaPagamento, aVista, debito, credito, creditoParcelado;
-                let respostaLoop = parseInt(prompt("Qual sua escolha? "+"\n1- Piso liso R$"+compraLiso.toFixed(2)+"\n2- Piso Taco R$"+compraTaco.toFixed(2)+"\n3- Piso Antiderrapande R$"+compraAntiderrapante.toFixed(2)));
+                let formaPagamento, aVista, debito, credito, creditoParcelado, porcentagemParcela, parcelas;
+                let respostaLoop = parseInt(prompt("Qual sua escolha? "+"\n1- Piso liso R$"+compraLiso.toFixed(2)+"\n2- Piso Taco R$"+compraTaco.toFixed(2)+"\n3- Piso Antiderrapante R$"+compraAntiderrapante.toFixed(2)));
                 switch(respostaLoop){
                     case 1:
-                        aVista = (compraLiso-(compraLiso*0.1));
+                       aVista = (compraLiso-(compraLiso*0.1));
                         debito = (compraLiso-(compraLiso*0.05));
                         credito = (compraLiso+(compraLiso*0.01));
                         creditoParcelado = (compraLiso+(compraLiso*0.02));
+                        porcentagemParcela = compraLiso*0.02
                         formaPagamento = parseInt(prompt("Você escolheu o Piso liso R$"+compraLiso.toFixed(2)+", qual será a forma de pagamento?"+
-                        "\n1. Dinheiro/Pix à vista com 10% de desconto"+aVista.toFixed(2)+
-                        "\n2. Cartão débito com 5% de desconto"+debito.toFixed(2)+
-                        "\n3. Cartão crédito à vista com 1% de acréscimo"+credito.toFixed(2)+
-                        "\n4. Cartão crédito parcelado com 2% de acréscimo"+creditoParcelado.toFixed(2)));
-                        /*if () {
-
-                        };*/
-
+                        "\n1. Dinheiro/Pix à vista com 10% de desconto R$"+aVista.toFixed(2)+
+                        "\n2. Cartão débito com 5% de desconto R$"+debito.toFixed(2)+
+                        "\n3. Cartão crédito à vista com 1% de acréscimo R$"+credito.toFixed(2)+
+                        "\n4. Cartão crédito parcelado com 2% de acréscimo R$"+creditoParcelado.toFixed(2)));
+                        switch(formaPagamento){
+                            case 1:
+                                alert("Certo, você selecionou a forma de pagamento Dinheiro/Pix à vista.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                document.write("======= "+metrosQuadrados+"m² de Piso liso ======="+"<br>Total: R$"+compraLiso+"<br>Desconto: R$"+(compraLiso*0.1)+"<br>Subtotal: R$"+aVista);
+                                saidaLoop = false;
+                                break;
+                            case 2:
+                                alert("Certo, você selecionou a forma de pagamento Cartão débito.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                document.write("======= "+metrosQuadrados+"m² de Piso liso ======="+"<br>Total: R$"+compraLiso+"<br>Desconto: R$"+(compraLiso*0.05)+"<br>Subtotal: R$"+debito);
+                                saidaLoop = false;
+                                break;
+                            case 3:
+                                alert("Certo, você selecionou a forma de pagamento Cartão crédito à vista.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                document.write("======= "+metrosQuadrados+"m² de Piso liso ======="+"<br>Total: R$"+compraLiso+"<br>Acréscimo: R$"+(compraLiso*0.01)+"<br>Subtotal: R$"+credito);
+                                saidaLoop = false;
+                                break;
+                            case 4:
+                                parcelas = parseInt(prompt("Cartão de crédito:"+
+                                                "\n1. 2x R$"+(creditoParcelado/2).toFixed(2) +
+                                                "\n2. 3x R$"+(creditoParcelado/3).toFixed(2) +
+                                                "\n3. 4x R$"+(creditoParcelado/4).toFixed(2) +
+                                                "\n4. 5x R$"+(creditoParcelado/5).toFixed(2) +
+                                                "\n5. 6x R$"+(creditoParcelado/6).toFixed(2) /*+
+                                                "\n6. 7x R$"+(creditoParcelado/7).toFixed(2) +
+                                                "\n7. 8x R$"+(creditoParcelado/8).toFixed(2) +
+                                                "\n8. 9x R$"+(creditoParcelado/9).toFixed(2) +
+                                                "\n9. 10x R$"+(creditoParcelado/10)*/));
+                                switch(parcelas){
+                                    case 1:
+                                        alert("Certo, você escolheu a forma de pagamento Cartão crédito parcelado em 2x.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                        document.write("======= "+metrosQuadrados+"m² de Piso liso ======="+"<br>Total: R$"+compraLiso+"<br>Acréscimo: R$"+(compraLiso*0.02)+"<br>Subtotal: R$"+creditoParcelado+"<br>Parcelas: 2x R$"+(creditoParcelado/2).toFixed(2));
+                                        break;
+                                    case 2:
+                                        alert("Certo, você escolheu a forma de pagamento Cartão crédito parcelado em 3x.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                        document.write("======= "+metrosQuadrados+"m² de Piso liso ======="+"<br>Total: R$"+compraLiso+"<br>Acréscimo: R$"+(compraLiso*0.02)+"<br>Subtotal: R$"+creditoParcelado+"<br>Parcelas: 3x R$"+(creditoParcelado/3).toFixed(2));
+                                        break;
+                                    case 3:
+                                        alert("Certo, você escolheu a forma de pagamento Cartão crédito parcelado em 4x.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                        document.write("======= "+metrosQuadrados+"m² de Piso liso ======="+"<br>Total: R$"+compraLiso+"<br>Acréscimo: R$"+(compraLiso*0.02)+"<br>Subtotal: R$"+creditoParcelado+"<br>Parcelas: 4x R$"+(creditoParcelado/4).toFixed(2));
+                                        break;
+                                    case 4:
+                                        alert("Certo, você escolheu a forma de pagamento Cartão crédito parcelado em 5x.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                        document.write("======= "+metrosQuadrados+"m² de Piso liso ======="+"<br>Total: R$"+compraLiso+"<br>Acréscimo: R$"+(compraLiso*0.02)+"<br>Subtotal: R$"+creditoParcelado+"<br>Parcelas: 5x R$"+(creditoParcelado/5).toFixed(2));
+                                        break;
+                                    case 5: 
+                                        alert("Certo, você escolheu a forma de pagamento Cartão crédito parcelado em 6x.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                        document.write("======= "+metrosQuadrados+"m² de Piso liso ======="+"<br>Total: R$"+compraLiso+"<br>Acréscimo: R$"+(compraLiso*0.02)+"<br>Subtotal: R$"+creditoParcelado+"<br>Parcelas: 6x R$"+(creditoParcelado/6).toFixed(2));
+                                        break;
+                                    default:
+                                        alert("Erro")
+                                    };          
+                                saidaLoop = false;   
+                                break;
+                            default:
+                                alert("Inválido");
+                                saidaLoop = true;
+                          
+                        };
                         break;
-                }
+                        //caso2 
+                    case 2:
+                    aVista = (compraTaco-(compraTaco*0.1));
+                        debito = (compraTaco-(compraTaco*0.05));
+                        credito = (compraTaco+(compraTaco*0.01));
+                        creditoParcelado = (compraTaco+(compraTaco*0.02));
+                        porcentagemParcela = compraTaco*0.02
+                        formaPagamento = parseInt(prompt("Você escolheu o Piso taco R$"+compraTaco.toFixed(2)+", qual será a forma de pagamento?"+
+                        "\n1. Dinheiro/Pix à vista com 10% de desconto R$"+aVista.toFixed(2)+
+                        "\n2. Cartão débito com 5% de desconto R$"+debito.toFixed(2)+
+                        "\n3. Cartão crédito à vista com 1% de acréscimo R$"+credito.toFixed(2)+
+                        "\n4. Cartão crédito parcelado com 2% de acréscimo R$"+creditoParcelado.toFixed(2)));
+                        switch(formaPagamento){
+                            case 1:
+                                alert("Certo, você selecionou a forma de pagamento Dinheiro/Pix à vista.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                document.write("======= "+metrosQuadrados+"m² de Piso taco ======="+"<br>Total: R$"+compraTaco+"<br>Desconto: R$"+(compraTaco*0.1)+"<br>Subtotal: R$"+aVista);
+                                saidaLoop = false;
+                                break;
+                            case 2:
+                                alert("Certo, você selecionou a forma de pagamento Cartão débito.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                document.write("======= "+metrosQuadrados+"m² de Piso taco ======="+"<br>Total: R$"+compraTaco+"<br>Desconto: R$"+(compraTaco*0.05)+"<br>Subtotal: R$"+debito);
+                                saidaLoop = false;
+                                break;
+                            case 3:
+                                alert("Certo, você selecionou a forma de pagamento Cartão crédito à vista.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                document.write("======= "+metrosQuadrados+"m² de Piso taco ======="+"<br>Total: R$"+compraTaco+"<br>Acréscimo: R$"+(compraTaco*0.01)+"<br>Subtotal: R$"+credito);
+                                saidaLoop = false;
+                                break;
+                            case 4:
+                                parcelas = parseInt(prompt("Cartão de crédito:"+
+                                                "\n1. 2x R$"+(creditoParcelado/2).toFixed(2) +
+                                                "\n2. 3x R$"+(creditoParcelado/3).toFixed(2) +
+                                                "\n3. 4x R$"+(creditoParcelado/4).toFixed(2) +
+                                                "\n4. 5x R$"+(creditoParcelado/5).toFixed(2) +
+                                                "\n5. 6x R$"+(creditoParcelado/6).toFixed(2) /*+
+                                                "\n6. 7x R$"+(creditoParcelado/7).toFixed(2) +
+                                                "\n7. 8x R$"+(creditoParcelado/8).toFixed(2) +
+                                                "\n8. 9x R$"+(creditoParcelado/9).toFixed(2) +
+                                                "\n9. 10x R$"+(creditoParcelado/10)*/));
+                                switch(parcelas){
+                                    case 1:
+                                        alert("Certo, você escolheu a forma de pagamento Cartão crédito parcelado em 2x.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                        document.write("======= "+metrosQuadrados+"m² de Piso taco ======="+"<br>Total: R$"+compraTaco+"<br>Acréscimo: R$"+(compraTaco*0.02)+"<br>Subtotal: R$"+creditoParcelado+"<br>Parcelas: 2x R$"+(creditoParcelado/2).toFixed(2));
+                                        break;
+                                    case 2:
+                                        alert("Certo, você escolheu a forma de pagamento Cartão crédito parcelado em 3x.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                        document.write("======= "+metrosQuadrados+"m² de Piso taco ======="+"<br>Total: R$"+compraTaco+"<br>Acréscimo: R$"+(compraTaco*0.02)+"<br>Subtotal: R$"+creditoParcelado+"<br>Parcelas: 3x R$"+(creditoParcelado/3).toFixed(2));
+                                        break;
+                                    case 3:
+                                        alert("Certo, você escolheu a forma de pagamento Cartão crédito parcelado em 4x.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                        document.write("======= "+metrosQuadrados+"m² de Piso taco ======="+"<br>Total: R$"+compraTaco+"<br>Acréscimo: R$"+(compraTaco*0.02)+"<br>Subtotal: R$"+creditoParcelado+"<br>Parcelas: 4x R$"+(creditoParcelado/4).toFixed(2));
+                                        break;
+                                    case 4:
+                                        alert("Certo, você escolheu a forma de pagamento Cartão crédito parcelado em 5x.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                        document.write("======= "+metrosQuadrados+"m² de Piso taco ======="+"<br>Total: R$"+compraTaco+"<br>Acréscimo: R$"+(compraTaco*0.02)+"<br>Subtotal: R$"+creditoParcelado+"<br>Parcelas: 5x R$"+(creditoParcelado/5).toFixed(2));
+                                        break;
+                                    case 5: 
+                                        alert("Certo, você escolheu a forma de pagamento Cartão crédito parcelado em 6x.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                        document.write("======= "+metrosQuadrados+"m² de Piso taco ======="+"<br>Total: R$"+compraTaco+"<br>Acréscimo: R$"+(compraTaco*0.02)+"<br>Subtotal: R$"+creditoParcelado+"<br>Parcelas: 6x R$"+(creditoParcelado/6).toFixed(2));
+                                        break;
+                                    default:
+                                        alert("Erro")
+                                    };          
+                                saidaLoop = false;   
+                                break;
+                            default:
+                                alert("Inválido");
+                                saidaLoop = true;
+                          
+                        };
+                        break;
+                        //cso 3
+                    case 3:
+                    aVista = (compraAntiderrapante-(compraAntiderrapante*0.1));
+                        debito = (compraAntiderrapante-(compraAntiderrapante*0.05));
+                        credito = (compraAntiderrapante+(compraAntiderrapante*0.01));
+                        creditoParcelado = (compraAntiderrapante+(compraAntiderrapante*0.02));
+                        porcentagemParcela = compraAntiderrapante*0.02
+                        formaPagamento = parseInt(prompt("Você escolheu o Piso antiderrapante R$"+compraAntiderrapante.toFixed(2)+", qual será a forma de pagamento?"+
+                        "\n1. Dinheiro/Pix à vista com 10% de desconto R$"+aVista.toFixed(2)+
+                        "\n2. Cartão débito com 5% de desconto R$"+debito.toFixed(2)+
+                        "\n3. Cartão crédito à vista com 1% de acréscimo R$"+credito.toFixed(2)+
+                        "\n4. Cartão crédito parcelado com 2% de acréscimo R$"+creditoParcelado.toFixed(2)));
+                        switch(formaPagamento){
+                            case 1:
+                                alert("Certo, você selecionou a forma de pagamento Dinheiro/Pix à vista.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                document.write("======= "+metrosQuadrados+"m² de Piso antiderrapante ======="+"<br>Total: R$"+compraAntiderrapante+"<br>Desconto: R$"+(compraAntiderrapante*0.1)+"<br>Subtotal: R$"+aVista);
+                                saidaLoop = false;
+                                break;
+                            case 2:
+                                alert("Certo, você selecionou a forma de pagamento Cartão débito.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                document.write("======= "+metrosQuadrados+"m² de Piso antiderrapante ======="+"<br>Total: R$"+compraAntiderrapante+"<br>Desconto: R$"+(compraAntiderrapante*0.05)+"<br>Subtotal: R$"+debito);
+                                saidaLoop = false;
+                                break;
+                            case 3:
+                                alert("Certo, você selecionou a forma de pagamento Cartão crédito à vista.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                document.write("======= "+metrosQuadrados+"m² de Piso antiderrapante ======="+"<br>Total: R$"+compraAntiderrapante+"<br>Acréscimo: R$"+(compraAntiderrapante*0.01)+"<br>Subtotal: R$"+credito);
+                                saidaLoop = false;
+                                break;
+                            case 4:
+                                parcelas = parseInt(prompt("Cartão de crédito:"+
+                                                "\n1. 2x R$"+(creditoParcelado/2).toFixed(2) +
+                                                "\n2. 3x R$"+(creditoParcelado/3).toFixed(2) +
+                                                "\n3. 4x R$"+(creditoParcelado/4).toFixed(2) +
+                                                "\n4. 5x R$"+(creditoParcelado/5).toFixed(2) +
+                                                "\n5. 6x R$"+(creditoParcelado/6).toFixed(2) /*+
+                                                "\n6. 7x R$"+(creditoParcelado/7).toFixed(2) +
+                                                "\n7. 8x R$"+(creditoParcelado/8).toFixed(2) +
+                                                "\n8. 9x R$"+(creditoParcelado/9).toFixed(2) +
+                                                "\n9. 10x R$"+(creditoParcelado/10)*/));
+                                switch(parcelas){
+                                    case 1:
+                                        alert("Certo, você escolheu a forma de pagamento Cartão crédito parcelado em 2x.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                        document.write("======= "+metrosQuadrados+"m² de Piso antiderrapante ======="+"<br>Total: R$"+compraAntiderrapante+"<br>Acréscimo: R$"+(compraAntiderrapante*0.02)+"<br>Subtotal: R$"+creditoParcelado+"<br>Parcelas: 2x R$"+(creditoParcelado/2).toFixed(2));
+                                        break;
+                                    case 2:
+                                        alert("Certo, você escolheu a forma de pagamento Cartão crédito parcelado em 3x.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                        document.write("======= "+metrosQuadrados+"m² de Piso antiderrapante ======="+"<br>Total: R$"+compraAntiderrapante+"<br>Acréscimo: R$"+(compraAntiderrapante*0.02)+"<br>Subtotal: R$"+creditoParcelado+"<br>Parcelas: 3x R$"+(creditoParcelado/3).toFixed(2));
+                                        break;
+                                    case 3:
+                                        alert("Certo, você escolheu a forma de pagamento Cartão crédito parcelado em 4x.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                        document.write("======= "+metrosQuadrados+"m² de Piso antiderrapante ======="+"<br>Total: R$"+compraAntiderrapante+"<br>Acréscimo: R$"+(compraAntiderrapante*0.02)+"<br>Subtotal: R$"+creditoParcelado+"<br>Parcelas: 4x R$"+(creditoParcelado/4).toFixed(2));
+                                        break;
+                                    case 4:
+                                        alert("Certo, você escolheu a forma de pagamento Cartão crédito parcelado em 5x.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                        document.write("======= "+metrosQuadrados+"m² de Piso antiderrapante ======="+"<br>Total: R$"+compraAntiderrapante+"<br>Acréscimo: R$"+(compraAntiderrapante*0.02)+"<br>Subtotal: R$"+creditoParcelado+"<br>Parcelas: 5x R$"+(creditoParcelado/5).toFixed(2));
+                                        break;
+                                    case 5: 
+                                        alert("Certo, você escolheu a forma de pagamento Cartão crédito parcelado em 6x.\n\nEstarei imprimindo sua nota, leve ao caixa e finalize o pagamento");
+                                        document.write("======= "+metrosQuadrados+"m² de Piso antiderrapante ======="+"<br>Total: R$"+compraAntiderrapante+"<br>Acréscimo: R$"+(compraAntiderrapante*0.02)+"<br>Subtotal: R$"+creditoParcelado+"<br>Parcelas: 6x R$"+(creditoParcelado/6).toFixed(2));
+                                        break;
+                                    default:
+                                        alert("Erro")
+                                    };          
+                                saidaLoop = false;   
+                                break;
+                            default:
+                                alert("Inválido");
+                                saidaLoop = true;
+                          
+                        };
+                        //fimcaso
+                        break;
+
+
+                    }
             }
         };
 
