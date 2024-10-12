@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        // completar forma de pagamento
                 /*
             
                         **********DESAFIO*************
@@ -34,13 +35,13 @@
                         pergunte se deseja fazer outra consulta e então refaça todo *
         */
 
-        var pisoAntiderrapante, pisoLiso, pisoTaco, orcamentoCompra, resposta, saidaLoop, metrosQuadrados, valorPiso, valorEmLoop, valorCompra, largura, comprimento;
+        var saidaloop, metrosQuadrados, valorCompra, compraLiso, compraTaco, compraAntiderrapante, largura, comprimento;
         
-        resposta = 0
-        pisoAntiderrapante = 40;
-        pisoLiso = 25;
-        pisoTaco = 35.7;
-        saidaLoop = true;
+        var resposta = 0
+        var pisoAntiderrapante = 40;
+        var pisoLiso = 25;
+        var pisoTaco = 35.7;
+        var saidaLoop = true;
 
         function orcamento(){
             while (saidaLoop == true){
@@ -53,15 +54,18 @@
                             switch(i){
                                 case 1:
                                     valorCompra = pisoLiso*metrosQuadrados;
-                                    document.write("Comprando o Piso liso; sua compra Custará: R$"+valorCompra.toFixed(2)+"<br>")
+                                    alert("Comprando o Piso liso; sua compra Custará: R$"+valorCompra.toFixed(2)+"\n")
+                                    compraLiso = valorCompra;
                                     break;
                                 case 2:
                                     valorCompra = pisoTaco*metrosQuadrados;
-                                    document.write("Comprando o Piso taco; sua compra custará: R$"+valorCompra.toFixed(2)+"<br>")
+                                    alert("Comprando o Piso taco; sua compra custará: R$"+valorCompra.toFixed(2)+"\n")
+                                    compraTaco = valorCompra;
                                     break;
                                 case 3:
                                     valorCompra = pisoAntiderrapante*metrosQuadrados;
-                                    document.write("Comprando o Piso Antiderrapante; sua compra Custará: R$"+valorCompra.toFixed(2)+"<br>")
+                                    alert("Comprando o Piso Antiderrapante; sua compra Custará: R$"+valorCompra.toFixed(2)+"\n")
+                                    compraAntiderrapante = valorCompra;
                                     break;
                             }
                         }
@@ -75,15 +79,18 @@
                             switch(i){
                                 case 1:
                                     valorCompra = pisoLiso*metrosQuadrados;
-                                    document.write("Comprando o Piso liso; sua compra Custará: R$"+valorCompra.toFixed(2)+"<br>")
+                                    alert("Comprando o Piso liso; sua compra Custará: R$"+valorCompra.toFixed(2)+"\n")
+                                    compraLiso = valorCompra;
                                     break;
                                 case 2:
                                     valorCompra = pisoTaco*metrosQuadrados;
-                                    document.write("Comprando o Piso taco; sua compra custará: R$"+valorCompra.toFixed(2)+"<br>")
+                                    alert("Comprando o Piso taco; sua compra custará: R$"+valorCompra.toFixed(2)+"\n");
+                                     compraTaco = valorCompra;
                                     break;
                                 case 3:
                                     valorCompra = pisoAntiderrapante*metrosQuadrados;
-                                    document.write("Comprando o Piso Antiderrapante; sua compra Custará: R$"+valorCompra.toFixed(2)+"<br>")
+                                    alert("Comprando o Piso Antiderrapante; sua compra Custará: R$"+valorCompra.toFixed(2)+"\n")
+                                    compraAntiderrapante = valorCompra;
                                     break;
                             }
                         }
@@ -97,15 +104,40 @@
         };
 
 
-        orcamentoCompra = parseInt(prompt("Olá, seja bem-vindo! Para melhor atendê-lo, por favor, informe-nos veio em busca de: " + "\n1. Orçamento" + "\n2. Compra"))
-        switch(orcamentoCompra){
-            case 1:
-                orcamento();
-                break;
-            default:
-                alert("Opção inválida, por favor, escolha novamente.");
-                break;
+        alert("Olá, seja bem-vindo! Para melhor atendê-lo, por favor, vamos primeiro fazer seu orçamento")
+        orcamento();
+        alert("Comprando "+metrosQuadrados.toFixed(2)+"m²: "+"\n- Piso liso R$"+compraLiso.toFixed(2)+"\n- Piso Taco R$"+compraTaco.toFixed(2)+"\n- Piso Antiderrapande R$"+compraAntiderrapante.toFixed(2));
+        resposta = confirm("Deseja proceguir com a compra? ");
+        if (resposta == true) {
+            saidaLoop = true;
+            while (saidaLoop == true){
+                let formaPagamento, aVista, debito, credito, creditoParcelado;
+                let respostaLoop = parseInt(prompt("Qual sua escolha? "+"\n1- Piso liso R$"+compraLiso.toFixed(2)+"\n2- Piso Taco R$"+compraTaco.toFixed(2)+"\n3- Piso Antiderrapande R$"+compraAntiderrapante.toFixed(2)));
+                switch(respostaLoop){
+                    case 1:
+                        aVista = (compraLiso-(compraLiso*0.1));
+                        debito = (compraLiso-(compraLiso*0.05));
+                        credito = (compraLiso+(compraLiso*0.01));
+                        creditoParcelado = (compraLiso+(compraLiso*0.02));
+                        formaPagamento = parseInt(prompt("Você escolheu o Piso liso R$"+compraLiso.toFixed(2)+", qual será a forma de pagamento?"+
+                        "\n1. Dinheiro/Pix à vista com 10% de desconto"+aVista.toFixed(2)+
+                        "\n2. Cartão débito com 5% de desconto"+debito.toFixed(2)+
+                        "\n3. Cartão crédito à vista com 1% de acréscimo"+credito.toFixed(2)+
+                        "\n4. Cartão crédito parcelado com 2% de acréscimo"+creditoParcelado.toFixed(2)));
+                        /*if () {
+
+                        };*/
+
+                        break;
+                }
+            }
         };
+
+        
+    
+        
+                
+        
     </script>
 </head>
 <body>
