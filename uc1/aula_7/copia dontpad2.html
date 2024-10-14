@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for1</title>
+    <script>
+        function avalia(sex) {
+            switch (sex) {
+                case 1:
+                    sex = "Homem"
+                    break
+                case 2:
+                    sex = "Mulher"
+                    break
+                case 3:
+                    sex = "Outro"
+                    break
+                default:
+                    sex = "Opção Inválida!"
+                    break
+            }
+            return sex;
+        }
+
+        function menu() {
+            let resp = parseInt(prompt("-----------MENU-----------\n1 - Homem\n2 - Mulher\n3" +
+                "- Outro\n--------------------------"));
+
+
+
+            return avalia(resp);
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <script>
+
+        document.write(menu())
+
+    </script>
+
+</body>
+
+</html>

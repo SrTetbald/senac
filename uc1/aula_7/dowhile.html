@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Faz pelo menos uma vez.
+        var nome, nota1, nota2, media, opcao;
+        do{
+            nome = prompt("Digite o nome: ");
+            nota1 = prompt("Nota 1: ");
+            nota2 = prompt("Nota 2: ");
+            media = (parseFloat(nota1) + parseFloat(nota2)) / 2;
+            document.write("ALUNO: "+nome+": <br> "+"NOTAS: "+nota1+", "+nota2+"<br>MÉDIA:"+ media);
+            opcao = prompt("deseja continuar? (s/n)");
+        }while(opcao == "s");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

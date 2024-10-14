@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var saida;
+        saida = true;
+        function menu(){
+            var sexo = parseInt(prompt('=========== menu =========== \n1 - Homem \n2 - Mulher \n3 - Outro'));
+            return sexo;
+        };
+    </script>
+</head>
+<body>
+    <script>
+        while (saida == true) {
+            var sexy = menu();
+            switch (sexy){
+                case 1:
+                    alert("Sexo: Homem");
+                    saida = false;
+                    break;
+                case 2:
+                    alert("Sexo: Mulher");
+                    saida = false;
+                    break;
+                case 3:
+                    alert("Sexo: Outro");
+                    saida = false;
+                    break;
+                default:
+                    alert("Sexo Inválido");
+            };
+        };   
+    </script>
+    
+</body>
+</html>

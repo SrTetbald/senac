@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for1</title>
+	<script>
+		function menu(){
+			let resp = parseInt(prompt("-----------MENU-----------\n1 - Homem\n2 - Mulher\n3"+
+			"- Outro\n--------------------------"))
+            switch(resp){
+                case 1:
+                resp = "Homem"
+                break
+                case 2:
+                resp = "Mulher"
+                break
+                case 3:
+                resp = "Outro"
+                break
+                default:
+                resp = "Opção Inválida!"
+                break
+            }
+			return resp
+		}
+		
+       
+	</script>
+</head>
+<body>
+	<script>
+		
+        document.write(menu())
+        
+	</script>	
+    
+</body>
+</html>

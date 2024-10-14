@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    var nota1, nota2;
+    /*
+        5. Faça um script que leia o nome e duas notas. Calcule a média. Informe se o aluno esta aprovado ou reprovado.
+    */
+    function media(x, y){
+        let resposta
+        let media = (x + y)/2
+        if(media >= 7){
+           resposta = "Aluno aprovado!"
+        } else {
+           resposta = "Aluno reprovado!"
+        }
+        return resposta;
+    };
+</script>
+</head>
+<body>
+    <script>
+        nota1 = parseFloat(prompt(`Nota 1: `));
+        nota2 = parseFloat(prompt(`Nota 2: `));
+        if (nota1 <= 10 && nota1 >= 0 && nota2 <= 10 && nota2 >= 0){
+            document.write(media(nota1, nota2))
+        }else{
+            alert(`valores incorretos`);
+        };
+    </script>
+    
+</body>
+</html>

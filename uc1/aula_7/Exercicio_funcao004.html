@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    var numero1, resposta;
+    /*
+        4.  Construir um programa no qual o usuário irá digitar um número e o programa irá dizer se ele 
+        é par ou ímpar (utilizar o comando função)
+    */
+    function parimpar(x){
+        if(x % 2 == 0){
+            alert(`${x} é par`);
+            document.write(`${x} é par <br><br>`);
+       }else{
+            alert(`${x} é ímpar`);
+            document.write(`${x} é ímpar <br><br>`);
+       };
+    };
+</script>
+</head>
+<body>
+    <script>
+        do{
+            numero1 = parseInt(prompt("Digite um número:"));
+            parimpar(numero1);
+            resposta = prompt("Deseja continuar? (S/N)");
+        }while(resposta == "s" || resposta == "S");
+    </script>
+    
+</body>
+</html>

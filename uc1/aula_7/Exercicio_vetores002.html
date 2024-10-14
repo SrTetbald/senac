@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            2. Construir um programa no qual ele escreverá, na tela, todos os valores de um vetor com cinco 
+                elementos numéricos. O usuário deste programa escolherá um desses elementos e deverá trocar 
+                o valor por um outro número digitado. 
+                Exemplo:
+                Valores do vetor 9, 3, 2, 6, 8.
+                Qual posição do vetor você quer alterar? <<Usuário digita um número, exemplo 0 >>.
+                Qual número você quer inserir? <<Usuário digita o valor, exemplo 5>>.
+                O vetor agora é composto por 5, 3, 2, 6, 8.
+        */
+        var escolha, novoNumero;
+        var lista = [9, 3, 2, 6, 8];
+        escolha = parseInt(prompt(`Você tem que essa lista: ${lista} \n qual posição você gostaria de alterar? `));
+        switch(escolha){
+            case 1:
+                lista[(escolha-1)] =  parseInt(prompt(`Qual o novo numero: `));
+                break;
+            case 2:
+                lista[(escolha-1)] =  parseInt(prompt(`Qual o novo numero: `));
+                break;
+            case 3:
+                lista[(escolha-1)] =  parseInt(prompt(`Qual o novo numero: `));
+                break;
+            case 4:
+                lista[(escolha-1)] =  parseInt(prompt(`Qual o novo numero: `));
+                break;
+            case 5:
+                lista[(escolha-1)] =  parseInt(prompt(`Qual o novo numero: `));
+                break;
+            default:
+                alert('Posição inválida');
+
+        }
+        alert(`Nova lista: ${lista}`);
+
+        
+    </script>
+</head>
+<body>
+    <script>
+
+    </script>
+</body>
+</html>

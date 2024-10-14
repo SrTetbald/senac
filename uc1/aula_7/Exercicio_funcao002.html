@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    var numero1, numero2;
+    /*
+        2. Construir um programa no qual o usuário deverá digitar dois números e o programa 
+        escreverá, na tela, qual dos dois números é o maior (utilizar o comando função).
+    */
+    function maiorque(x, y){
+        if (x > y) {
+            alert(`${x} é maior que ${y}`);    
+        }else{
+            alert(`${y} é maior que ${x}`);
+        };
+    };
+</script>
+</head>
+<body>
+    <script>
+        numero1 = parseInt(prompt("Digite um número:"));
+        numero2 = parseInt(prompt("Digite outro número:"));
+        maiorque(numero1, numero2);
+    </script>
+    
+</body>
+</html>

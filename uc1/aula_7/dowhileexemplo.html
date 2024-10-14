@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    var numero, saida;
+    do{
+        numero = parseInt(prompt("Digite uum valor: "));
+        if(numero % 2 == 0){
+            alert(`${numero} é par`);
+            document.write(`${numero} é par <br><br>`);
+       }else{
+            alert(`${numero} é ímpar`);
+            document.write(`${numero} é ímpar <br><br>`);
+       };
+       saida = prompt("Deseja continuar? (s/n)");
+    }while(saida == "s" || saida == "S");
+    alert("Até mais..");
+</script>
+</head>
+<body>
+    
+</body>
+</html>
