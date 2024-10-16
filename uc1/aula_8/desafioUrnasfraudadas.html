@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            Construir uma sistema de votos para eleição de prefeito e vereador com canditatos sendo prefeitos: zé (13) amanda(22), e sendo vereadores: Claudinho(13322) Bochecha(22222). Para cinco votos nulos para prefeito o candidato Zé ganha um voto, e a mesma coisa ocorre com o vereador. Para ver a lista de votos sera necessário uma senha a senha da votação real e uma da votação fraudada.
+        */
+       var votosSecao, volta;
+       var senhaReal, senhaFalsa;
+       var candidatoZe, candidatoAmanda, candidatoClaudinho, candidatoBochecha;
+       var listaVotosPrefeitoZeReal = 0, listaVotosPrefeitoAnaReal = 0, listaVotosPrefeitoZeFalsa = 0, listaVotosVereadorReal = 0, listaVotosVereadorFalsa = 0, listaVotosNuloReal = 0, listaVotosBrancos = [], listaDeEleitor = [];
+       var prefeitoVotado = [];
+       var impressao = [], impressaoFalsa = [];
+       var contNulo = 0, falta = 0, qtdvotos = 0;
+
+       votosSecao = 10
+       
+       function voto(){
+            let eleitor = parseInt(prompt("Digite o titulo: "));
+            let opcaoVoto = prompt("Qual seu voto para prefeito: ");
+            switch(opcaoVoto){
+                case "11":
+                    listaDeEleitor.push(eleitor);
+                    prefeitoVotado.push("Zé");
+                    listaVotosPrefeitoZeReal += 1;
+                    impressao.push(eleitor+" Votou em Zé<br>");
+                    impressaoFalsa.push(eleitor+" Votou em Zé<br>");
+                    qtdvotos += 1;
+                    break;
+                case "12":
+                    listaDeEleitor.push(eleitor);
+                    prefeitoVotado.push("Ana");
+                    listaVotosPrefeitoAnaReal += 1;
+                    impressao.push(eleitor+" Votou em Ana<br>");
+                    impressaoFalsa.push(eleitor+" Votou em Ana<br>");
+                    qtdvotos += 1;
+                    break;
+                case "00":
+                    if(contNulo == 4){
+                        listaDeEleitor.push(eleitor);
+                        prefeitoVotado.push("Zé");
+                        listaVotosPrefeitoZeFalsa += 1;
+                        listaVotosNuloReal += 1;
+                        impressaoFalsa.push(eleitor+" Votou em Zé<br>");
+                        impressao.push(eleitor+" Votou Nulo<br>");
+                        qtdvotos += 1;
+                        contNulo = 0;
+                    }else{
+                        listaDeEleitor.push(eleitor);
+                        prefeitoVotado.push("Nulo");
+                        listaVotosNuloReal += 1;
+                        impressao.push(eleitor+" Votou Nulo<br>");
+                        impressaoFalsa.push(eleitor+" Votou Nulo<br>");
+                        qtdvotos += 1;
+                        contNulo += 1
+                    };
+                    break;
+                case "b":
+                case "B":
+                    listaDeEleitor.push(eleitor);
+                    prefeitoVotado.push("Branco");
+                    listaVotosNuloReal += 1;
+                    impressao.push(eleitor+" Votou Branco<br>");
+                    impressaoFalsa.push(eleitor+" Votou Branco<br>");
+                    qtdvotos += 1;
+                    break;               
+                default:
+                    alert("Opção inválida")
+            };
+        };
+
+    </script>
+</head>
+<body>
+    <script>
+        for(let i = 0; i < votosSecao; i++){
+            let comparecimento = parseInt(prompt("Eleitor "+(i+1)+" compareceu? \n\n1. Sim\n2. Não"))
+            switch(comparecimento){
+                case 1:
+                    voto();
+                    break;
+                case 2:
+                    falta += 1;
+                    impressao.push(i+" Faltou<br>");
+                    impressaoFalsa.push(i+" Faltou<br>");
+                    break;
+            };  
+        }
+
+        
+
+        senha = prompt("Digite a senha: ");
+        if(senha == "321"){
+            document.write(impressao+"<br><br><br><br>")
+            document.write(listaVotosNuloReal+"<br>")
+            document.write(falta+"<br>")
+            document.write("Votos computados: "+qtdvotos)
+            
+        }else if(senha == "123"){
+            document.write(impressaoFalsa)
+            document.write(listaVotosPrefeitoZeFalsa+"<br>")
+            document.write(falta+"<br>")
+            document.write("Votos computados: "+qtdvotos)
+        };
+       
+        
+        
+    </script>
+</body>
+</html>

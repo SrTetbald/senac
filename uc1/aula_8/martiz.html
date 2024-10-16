@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var idade = [[2], [2]];
+        var soma = 0;
+        idade[0][0] = 12;
+        idade[0][1] = 14;
+        idade[1][0] = 16;
+        idade[1][1] = 18;
+
+        document.write("Na linha 0, coluna 0 temos a idade de " + idade[0][0] + " anos");
+        document.write("Na linha 0, coluna 1 temos a idade de " + idade[0][1] + " anos");
+        document.write("Na linha 1, coluna 0 temos a idade de " + idade[1][0] + " anos");
+        document.write("Na linha 1, coluna 1 temos a idade de " + idade[1][1] + " anos");
+        document.write("<br><br>");
+        for(let i = 0; i < 2; i++){
+            for(let j = 0; j < 2; j++){
+                document.write("<br>Na matriz, a idade da pessoa na posição [" + i + "][" + j + "] é " + idade[i][j] + " anos");
+                soma += idade[i][j]
+            }
+        };
+        document.write("<br><br>Soma das idades é "+soma);    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

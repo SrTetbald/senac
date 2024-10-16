@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var numeros = [], numerosOrdenados = [];
+        function maiorque(){
+            for(let i = 0; i <= 2; i++){
+                numeros[i] = parseInt(prompt("Digite um valor: "));
+            };
+            numeros.sort((a, b) => b - a);
+            document.write("Os números digitados em ordem decrescente são: "+numeros.join(" que é maior que "+"."));
+        };
+    </script>
+</head>
+<body>
+    <script>
+        maiorque();
+    </script>
+    
+</body>
+</html>
