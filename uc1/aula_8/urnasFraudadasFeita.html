@@ -115,42 +115,33 @@
             };
             /*console.log(`O eleitor ${armazenamentoEleitor.tituloEleitor[valorRotativo]} votou para prefeito: ${armazenamentoEleitor.prefeitoVotado[valorRotativo]} o voto fraudado foi ${armazenamentoEleitorFraude.prefeitoVotadoFraude[valorRotativo]}`);
             console.log(`Ze: ${zeVotosReais} Ana: ${anaVotosReais} Nulo: ${pNuloVotosReais} Zefraudado: ${zeVotosfraudados} NuloFraudado: ${pNuloVotosFraudados}`);*/
+            console.log(eleitor)
             valorRotativo += 1;
         }
+
+        function imprimirReal(){
+            document.write(`Quantidade de votos prefeito: ${quantidadeDeVotos} <br>Zé: ${zeVotosReais};<br>Ana: ${anaVotosReais}<br>Nulo: ${pNuloVotosReais} <br><br><br><br><br>`);
+
+            document.write(`Quantidade de votos vereador: ${quantidadeDeVotos} <br>Claudinho: ${claudinhoVotosReais};<br>Bochecha: ${bochechaVotosReais}<br>Nulo: ${vNuloVotosReais} <br><br><br><br><br>`);
+
+            for(let i = 0; i < quantidadeDeVotos; i++){
+                document.write(`O eleitor ${armazenamentoEleitor.tituloEleitor[i]}:<br>Votou para prefeito: ${armazenamentoEleitor.prefeitoVotado[i]}<br>Votou para vereador: ${armazenamentoEleitor.vereadorVotado[i]}<br><br>`);
+            };
+            
+            document.write("<br><br><br><br><br><br><br><br><br><br><br>");
+        };
+
+        function imprirmirFraude(){
+            document.write(`Quantidade de votos para prefeito: ${quantidadeDeVotos} <br>Zé: ${zeVotosfraudados};<br>Ana: ${anaVotosReais}<br>Nulo: ${pNuloVotosFraudados} <br><br><br><br><br>`);
+
+            document.write(`Quantidade de votos para vereador: ${quantidadeDeVotos} <br>Claudinho: ${claudinhoVotosfraudados};<br>Bochecha: ${bochechaVotosReais}<br>Nulo: ${vNuloVotosFraudados} <br><br><br><br><br>`);
+
+            for(let i = 0; i < quantidadeDeVotos; i++){
+                document.write(`O eleitor ${armazenamentoEleitor.tituloEleitor[i]}<br>Votou para prefeito: ${armazenamentoEleitorFraude.prefeitoVotadoFraude[i]}<br>Votou para vereador: ${armazenamentoEleitorFraude.vereadorVotadoFraude[i]}<br><br>`);
+            };
+        };
     </script>
 </head>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <body>
     <script>
         while (resposta == true) {
@@ -162,33 +153,14 @@
                 case 2:
                     senha = prompt("Digite a senha: ");
                     if(senha == "123"){
-                        document.write(`Quantidade de votos prefeito: ${quantidadeDeVotos} <br>Zé: ${zeVotosReais};<br>Ana: ${anaVotosReais}<br>Nulo: ${pNuloVotosReais} <br><br><br><br><br>`);
-
-                        document.write(`Quantidade de votos vereador: ${quantidadeDeVotos} <br>Claudinho: ${claudinhoVotosReais};<br>Bochecha: ${bochechaVotosReais}<br>Nulo: ${vNuloVotosReais} <br><br><br><br><br>`);
-
-                        for(let i = 0; i < quantidadeDeVotos; i++){
-                            document.write(`O eleitor ${armazenamentoEleitor.tituloEleitor[i]}:<br>Votou para prefeito: ${armazenamentoEleitor.prefeitoVotado[i]}<br>Votou para vereador: ${armazenamentoEleitor.vereadorVotado[i]}<br><br>`);
-                        };
-                        
-                        document.write("<br><br><br><br><br><br><br><br><br><br><br>")
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        // fake 
-                        document.write(`Quantidade de votos para prefeito: ${quantidadeDeVotos} <br>Zé: ${zeVotosfraudados};<br>Ana: ${anaVotosReais}<br>Nulo: ${pNuloVotosFraudados} <br><br><br><br><br>`);
-
-                        document.write(`Quantidade de votos para vereador: ${quantidadeDeVotos} <br>Claudinho: ${claudinhoVotosfraudados};<br>Bochecha: ${bochechaVotosReais}<br>Nulo: ${vNuloVotosFraudados} <br><br><br><br><br>`);
-
-                        for(let i = 0; i < quantidadeDeVotos; i++){
-                            document.write(`O eleitor ${armazenamentoEleitor.tituloEleitor[i]}<br>Votou para prefeito: ${armazenamentoEleitorFraude.prefeitoVotadoFraude[i]}<br>Votou para vereador: ${armazenamentoEleitorFraude.vereadorVotadoFraude[i]}<br><br>`);
-                        };
-                    }
-                    resposta = false;
+                        imprimirReal();
+                        resposta = false;
+                    }else if(senha == "321"){
+                        imprirmirFraude();
+                        resposta = false;
+                    }else{
+                        alert("Senha inválida");
+                    };
                     break;
                 default:
                     alert("Opção inválida");
