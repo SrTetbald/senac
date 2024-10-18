@@ -42,7 +42,7 @@ function verListaDeEleitores() {
     }
 }
 function voto() {
-    quantidadeDeVotos += 1;
+    
     respostaDoWhile = true;
     let respostaWhile = true;
     while (respostaWhile == true) {
@@ -50,6 +50,7 @@ function voto() {
             eleitor = parseInt(prompt("Digite o titulo: "));
             verListaDeEleitores();
         } while (respostaDoWhile == true);
+        quantidadeDeVotos += 1;
         let opcaoVoto = prompt("Qual seu voto para prefeito: ");
         switch (opcaoVoto) {
             case "11":
@@ -138,46 +139,37 @@ console.log(`Ze: ${zeVotosReais} \nAna: ${anaVotosReais} \nNulo: ${pNuloVotosRea
 }
 
 function imprimirReal() {
-    document.write(
-        `Quantidade de votos prefeito: ${quantidadeDeVotos} <br>Zé: ${zeVotosReais};<br>Ana: ${anaVotosReais}<br>Nulo: ${pNuloVotosReais} <br><br><br><br><br>`
-    );
-
-    document.write(
-        `Quantidade de votos vereador: ${quantidadeDeVotos} <br>Claudinho: ${claudinhoVotosReais};<br>Bochecha: ${bochechaVotosReais}<br>Nulo: ${vNuloVotosReais} <br><br><br><br><br>`
-    );
+    var conteudoRealLoop;
+    var conteudoReal =`Quantidade de votos prefeito: ${quantidadeDeVotos} <br>Zé: ${zeVotosReais};<br>Ana: ${anaVotosReais}<br>Nulo: ${pNuloVotosReais} <br><br><br><br><br> Quantidade de votos vereador: ${quantidadeDeVotos} <br>Claudinho: ${claudinhoVotosReais};<br>Bochecha: ${bochechaVotosReais}<br>Nulo: ${vNuloVotosReais} <br><br><br><br><br>`
+    
 
     for (let i = 0; i < quantidadeDeVotos; i++) {
-        document.write(
-            `O eleitor ${armazenamentoEleitor.tituloEleitor[i]}:<br>Votou para prefeito: ${armazenamentoEleitor.prefeitoVotado[i]}<br>Votou para vereador: ${armazenamentoEleitor.vereadorVotado[i]}<br><br>`
-        );
+        conteudoReal += `O eleitor ${armazenamentoEleitor.tituloEleitor[i]}:<br>Votou para prefeito: ${armazenamentoEleitor.prefeitoVotado[i]}<br>Votou para vereador: ${armazenamentoEleitor.vereadorVotado[i]}<br><br>`
     }
 
-    document.write("<br><br><br><br><br><br><br><br><br><br><br>");
+    conteudoReal +=("<br><br><br><br><br><br><br><br><br><br><br>");
+    return conteudoReal;
 }
 
 function imprirmirFraude() {
-    document.write(
-        `Quantidade de votos para prefeito: ${quantidadeDeVotos} <br>Zé: ${zeVotosfraudados};<br>Ana: ${anaVotosReais}<br>Nulo: ${pNuloVotosFraudados} <br><br><br><br><br>`
-    );
-
-    document.write(
-        `Quantidade de votos para vereador: ${quantidadeDeVotos} <br>Claudinho: ${claudinhoVotosfraudados};<br>Bochecha: ${bochechaVotosReais}<br>Nulo: ${vNuloVotosFraudados} <br><br><br><br><br>`
-    );
+    var conteudoFalso = `Quantidade de votos para prefeito: ${quantidadeDeVotos} <br>Zé: ${zeVotosfraudados};<br>Ana: ${anaVotosReais}<br>Nulo: ${pNuloVotosFraudados} <br><br><br><br><br> Quantidade de votos para vereador: ${quantidadeDeVotos} <br>Claudinho: ${claudinhoVotosfraudados};<br>Bochecha: ${bochechaVotosReais}<br>Nulo: ${vNuloVotosFraudados} <br><br><br><br><br>`
 
     for (let i = 0; i < quantidadeDeVotos; i++) {
-        document.write(
-            `O eleitor ${armazenamentoEleitor.tituloEleitor[i]}<br>Votou para prefeito: ${armazenamentoEleitorFraude.prefeitoVotadoFraude[i]}<br>Votou para vereador: ${armazenamentoEleitorFraude.vereadorVotadoFraude[i]}<br><br>`
-        );
+        conteudoFalso += `O eleitor ${armazenamentoEleitor.tituloEleitor[i]}<br>Votou para prefeito: ${armazenamentoEleitorFraude.prefeitoVotadoFraude[i]}<br>Votou para vereador: ${armazenamentoEleitorFraude.vereadorVotadoFraude[i]}<br><br>`
     }
+    return conteudoFalso;
 }
 
 function impressaoDeVotos(){
+    var novaJanela = window.open(" ", "_blank");
     senha = prompt("Digite a senha: ");
     if (senha == "123") {
-        imprimirReal();
+        var relatorioreal = imprimirReal();
+        novaJanela.document.write(relatorioreal);
+        novaJanela.document.write("<br>=====================================================<br>")
         //IMPRESSÃO DUPLA PORQUE EU NÃO TENHO UM BANCO DE DADOS PARA SALVAR
-        document.write("<br>=====================================================<br>")
-        imprirmirFraude();
+        var relatoriofalso = imprirmirFraude();
+        novaJanela.document.write(relatoriofalso);
         resposta = false;
     } else if (senha == "321") {
         imprirmirFraude();

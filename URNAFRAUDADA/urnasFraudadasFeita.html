@@ -5,9 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title> Urnas </title>
         <script src="votos.js"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <button onclick="voto()">Votar</button>
-        <button onclick="imprimessaoDeVotos()" target=_blank>Imprimir Relação de votos</button>
+        <main>
+            <div class="opcao">
+                <button onclick="voto()">Votar</button>
+                <button onclick="impressaoDeVotos()">Imprimir Relação de votos</button>
+            </div>  
+        </main>
     </body>
 </html>
