@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+    </head>
+    <body>
+        <script>
+            while (resposta == true) {
+                let escolha = parseInt(
+                    prompt(
+                        "O que deseja fazer? \n\n1. Votar\n2. Ver relação de votos"
+                    )
+                );
+                switch (escolha) {
+                    case 1:
+                        voto();
+                        break;
+                    case 2:
+                        senha = prompt("Digite a senha: ");
+                        if (senha == "123") {
+                            imprimirReal();
+                            //IMPRESSÃO DUPLA PORQUE EU NÃO TENHO UM BANCO DE DADOS PARA SALVAR OS VOTOS
+                            document.write("<br>=====================================================<br>")
+                            imprirmirFraude();
+                            resposta = false;
+                        } else if (senha == "321") {
+                            imprirmirFraude();
+                            resposta = false;
+                        } else {
+                            alert("Senha inválida");
+                        }
+                        break;
+                    default:
+                        alert("Opção inválida");
+                }
+            }
+        </script>
+    </body>
+</html>
