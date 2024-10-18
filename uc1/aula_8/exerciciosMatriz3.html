@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+        /*
+            
+        3. Construir um programa no qual o usuário digitará valores em uma matriz 4X4 e o programa irá
+        escrever a soma dos valores de cada linha e de cada coluna.
+        */
+
+        var matriz = [
+          [1, 2, 3, 4],
+          [5, 6, 7, 8],
+          [9, 10, 11, 12],
+          [13, 14, 15, 16]
+        ];
+      
+
+        var somaColunas = new Array(matriz[0].length).fill(0);
+      
+        for (var linha = 0; linha < matriz.length; linha++) {
+          let somaLinha = 0;
+          for (var coluna = 0; coluna < matriz[linha].length; coluna++) {
+            somaLinha += matriz[linha][coluna];
+            somaColunas[coluna] += matriz[linha][coluna]; 
+          }
+          document.write("Soma da linha " + (linha + 1) + ": " + somaLinha + "<br>");
+        }
+      
+        
+        for (var i = 0; i < somaColunas.length; i++) {
+          document.write("Soma da coluna " + (i + 1) + ": " + somaColunas[i] + "<br>");
+        }
+      </script>
+  </head>
+  <body></body>
+</html>

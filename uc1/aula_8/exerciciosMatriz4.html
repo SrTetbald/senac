@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+              /*
+
+                  4.  Fazer um programa, que contenha duas matrizes 2X2 e o programa escreverá na tela, qual
+                      matriz tem a soma de seus valores um número maior.
+              */
+        var matriz1 = [[1, 2], [3, 4]];
+        var matriz2 = [[5, 6], [7, 8]];
+
+        var somaMatriz1 = 0, somaMatriz2 = 0;
+        for(let i = 0; i < 2; i++){
+            for(let j = 0; j < 2; j++){
+                somaMatriz1 += matriz1[i][j];
+                somaMatriz2 += matriz2[i][j];
+            };
+        };
+        if (somaMatriz1 > somaMatriz2) {
+            document.write("A matriz 1 tem a soma de seus valores maior: " + somaMatriz1);
+        } else if (somaMatriz2 > somaMatriz1) {
+            document.write("A matriz 2 tem a soma de seus valores maior: " + somaMatriz2);
+        } else {
+            document.write("As duas matrizes têm a mesma soma de valores: " + somaMatriz1);
+        }
+    </script>
+  </head>
+  <body></body>
+</html>
