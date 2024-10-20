@@ -47,7 +47,7 @@ function voto() {
     let respostaWhile = true;
     while (respostaWhile == true) {
         do {
-            eleitor = parseInt(prompt("Digite o titulo: "));
+            eleitor = prompt("Digite o titulo: ");
             verListaDeEleitores();
         } while (respostaDoWhile == true);
         quantidadeDeVotos += 1;
