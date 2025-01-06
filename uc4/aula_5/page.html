@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo Claro / Escuro com Exemplo de Conteúdo</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .last{
+            margin-top: 5px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button:hover, .last:hover{
+            background-color: #45a049;
+        }
+
+    
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        body.dark-mode button {
+            background-color: #555;
+        }
+
+        body.dark-mode button:hover {
+            background-color: #666;
+        }
+
+        body.dark-mode h1, body.dark-mode h2, body.dark-mode p {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Modo Claro / Modo Escuro</h1>
+    <p role="dialog">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque impedit sed quam accusamus. Soluta non omnis veniam iste quam impedit, alias doloribus praesentium laudantium vitae quis laboriosam blanditiis maiores debitis.
+    </p>
+    
+    <img src="https://via.placeholder.com/800x400" alt="Imagem de exemplo">
+    
+    <p role="dialog">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ratione amet nisi fugit. Ut vitae illum recusandae excepturi, molestiae ea officiis architecto dolorem asperiores harum sint est! Earum, consectetur illum.
+        Ipsa vitae non laudantium impedit laboriosam minima. Deleniti molestias error aut odit dolore? Ex, voluptates? Dolor, modi! Ad impedit fuga placeat, praesentium officia error et provident architecto! Illo, voluptatem perspiciatis?
+        Perspiciatis repellendus aspernatur sunt harum asperiores obcaecati qui quia incidunt aperiam, fugiat dolorem. Mollitia minus alias amet itaque nam sunt ipsa id vitae sequi, tempore eum porro ut est aliquid!
+    </p>
+
+    <button onclick="toggleMode()" role="button">Alternar Modo</button> 
+    <a href="bootstrap.html" class="last" target="_blank">Outra page</a>
+
+
+
+
+
+    <footer>
+        <script>
+            function toggleMode() {
+                document.body.classList.toggle('dark-mode');
+            }
+        </script>
+    </footer>
+</body>
+</html>
